@@ -1,0 +1,157 @@
+footer a:hover {
+  color: #ff6700 !important;
+}
+footer .foo-up .footer-tit {
+  border-bottom: 1px solid #e0e0e0;
+  padding: 27px 0;
+}
+footer .foo-up .footer-tit ul li {
+  float: left;
+  border-right: 1px solid #e0e0e0;
+  width: 19.8%;
+  height: 25px;
+  line-height: 25px;
+}
+footer .foo-up .footer-tit ul li a {
+  color: #616161;
+  font-size: 16px;
+}
+footer .foo-up .footer-tit ul .last {
+  border-right-width: 0;
+}
+footer .foo-up .footer-main {
+  padding: 40px 0;
+}
+footer .foo-up .footer-main > dl {
+  float: left;
+  width: 160px;
+}
+footer .foo-up .footer-main > dl dt {
+  font-size: 14px;
+  color: #424242;
+  margin-bottom: 26px;
+}
+footer .foo-up .footer-main > dl dd {
+  margin-top: 10px;
+  font-size: 12px;
+}
+footer .foo-up .footer-main > dl a {
+  color: #757575;
+}
+footer .foo-up .footer-main > .service {
+  float: right;
+  width: 251px;
+  border-left: 1px solid #e0e0e0;
+  color: #616161;
+}
+footer .foo-up .footer-main > .service p {
+  font-size: 22px;
+  line-height: 1;
+  color: #ff6700;
+}
+footer .foo-up .footer-main > .service .xinxi {
+  display: block;
+  width: 120px;
+  height: 30px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  border: 1px solid #ff6700;
+  background: #fff;
+  color: #ff6700;
+  line-height: 30px;
+  transition: all 0.4s;
+  font-size: 12px;
+}
+footer .foo-up .footer-main > .service .xinxi em {
+  font-size: 10px;
+}
+footer .foo-up .footer-main > .service .xinxi:hover {
+  color: white !important;
+  background: #ff6700 !important;
+}
+footer .foo-up .footer-main > .service span {
+  margin: 0 0 5px 0;
+  font-size: 12px;
+}
+footer .foo-up .footer-main > .service .weixin {
+  font-size: 12px;
+  margin-top: 10px;
+  position: relative;
+  height: 30px;
+  line-height: 30px;
+}
+footer .foo-up .footer-main > .service .weixin em {
+  font-style: normal;
+}
+footer .foo-up .footer-main > .service .weixin > a {
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  margin-left: 6px;
+  margin-top: -3px;
+  color: #494949;
+  font-size: 24px;
+  vertical-align: middle;
+}
+footer .foo-up .footer-main > .service .weixin .icon-weixin:hover img {
+  display: block;
+}
+footer .foo-up .footer-main > .service .weixin img {
+  width: 126px;
+  height: 126px;
+  z-index: 2;
+  position: absolute;
+  top: 30px;
+  right: 25px;
+  display: none;
+}
+footer .foo-down {
+  padding: 30px 0;
+  font-size: 12px;
+  background: #fafafa;
+}
+footer .foo-down .container {
+  position: relative;
+}
+footer .foo-down .container .logo-footer {
+  width: 57px;
+  height: 57px;
+  margin-right: 10px;
+  background: url(../img/logo-footer.png) no-repeat 50% 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+footer .foo-down .container .f-left {
+  color: #b0b0b0;
+  padding-left: 67px;
+  line-height: 18px;
+}
+footer .foo-down .container .f-left .first a {
+  color: #757575;
+  font-size: 12px;
+}
+footer .foo-down .container .f-left .first .sep {
+  font-size: 12px;
+}
+footer .foo-down .container .f-left a {
+  color: #b0b0b0;
+}
+footer .foo-down .container .f-right {
+  margin: 4px 0 15px;
+  padding-left: 67px;
+}
+footer .foo-down .container .f-right img {
+  width: 85px;
+  height: 28px;
+}
+footer .foo-down .container .f-right .danger img {
+  width: 106px;
+  height: 40px;
+}
+footer .foo-down .people {
+  margin: 30px auto 0;
+  width: 100%;
+  height: 19px;
+  background: url(../img/2020.png) no-repeat center 0;
+}

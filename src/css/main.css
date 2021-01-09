@@ -1,0 +1,263 @@
+.main {
+  background: #f5f5f5;
+}
+.main .title {
+  font-size: 22px;
+  font-weight: 200;
+  line-height: 58px;
+  color: #333;
+}
+.main .tit-ul {
+  margin: 0;
+  padding-top: 16px;
+  font-size: 16px;
+}
+.main .tit-ul .tit-li {
+  float: left;
+  margin-left: 30px;
+  cursor: pointer;
+}
+.main .tit {
+  position: relative;
+}
+.main .tit .tabs {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.main .styl-left {
+  float: left;
+  width: 234px;
+}
+.main .styl-left li {
+  margin-bottom: 14px;
+}
+.main .styl-right {
+  float: right;
+  width: 978px;
+}
+.main .styl-right ul {
+  margin-left: -14px;
+}
+.main .styl-right ul > li {
+  height: 260px;
+  padding: 20px 0;
+  position: relative;
+  z-index: 1;
+  float: left;
+  width: 234px;
+  margin-left: 14px;
+  margin-bottom: 14px;
+  background: #fff;
+  /*  -webkit-transition: all .2s linear;
+                transition: all .2s linear; */
+}
+.main .styl-right ul > li div {
+  width: 160px;
+  height: 160px;
+  margin: 0 auto 18px;
+}
+.main .styl-right ul > li div img {
+  width: 160px;
+  height: 160px;
+}
+.main .styl-right ul > li h3 {
+  margin: 0 10px 2px;
+  font-size: 14px;
+  font-weight: 400;
+  color: #333;
+}
+.main .xiao > h1 {
+  color: #333333;
+  font-size: 22px;
+  font-weight: 200;
+  line-height: 58px;
+  display: block;
+  position: relative;
+}
+.main .xiao > h1 > div {
+  position: absolute;
+  right: 0;
+  top: 10px;
+}
+.main .xiao > h1 > div span {
+  display: inline-block;
+  width: 24px;
+  height: 16px;
+  padding: 3px 5px;
+  margin-left: -1px;
+  border: 1px solid #e0e0e0;
+  line-height: 16px;
+  -webkit-transition: color 0.5s;
+  transition: color 0.5s;
+  color: #b0b0b0;
+  text-align: center;
+  cursor: pointer;
+}
+.main .xiao .xiao1 {
+  width: 234px;
+  height: 286px;
+  background: #F1eded;
+  padding-top: 54px;
+  float: left;
+}
+.main .xiao .xiao1 > div:nth-child(1) {
+  color: #ef3a3b;
+}
+.main .xiao .xiao1 > img {
+  margin: 25px 0;
+}
+.main .xiao .swiper {
+  float: right;
+}
+.main .xiao .swiper .swiper-wrapper {
+  height: 340px;
+}
+.main .xiao .swiper .swiper-wrapper .swiper-slide {
+  border-top: 1px solid #ffac13;
+  margin-left: 14px;
+  width: 234px;
+  float: left;
+  background: rgba(0, 0, 0, 0.02);
+}
+.main .xiao .swiper .swiper-wrapper .swiper-slide a {
+  display: block;
+  padding-top: 39px;
+  height: 300px;
+}
+.main .xiao .swiper .swiper-wrapper .swiper-slide a .content h3 {
+  margin: 0 20px 3px;
+  font-size: 14px;
+  font-weight: 400;
+  text-overflow: ellipsis;
+  color: #212121;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.main .xiao .swiper .swiper-wrapper .swiper-slide a .content .spe {
+  height: 18px;
+  margin: 0 20px 12px;
+  font-size: 12px;
+  color: #b0b0b0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.main .xiao .swiper .swiper-wrapper .swiper-slide a .content .price {
+  color: #ff6709;
+}
+.main .xiao .swiper .swiper-wrapper .swiper-slide a .content .price del {
+  color: #b0b0b0;
+}
+.main .xiao .swiper .swiper-wrapper .swiper-slide a .content > .etam {
+  margin: 0 auto 22px;
+}
+.main .xiao .swiper .swiper-wrapper .swiper-slide a .content > .etam img {
+  width: 160px;
+  height: 160px;
+}
+.main .note9,
+.main .redmi,
+.main .mihome,
+.main .pot,
+.main .life,
+.main .life2,
+.main .pen {
+  height: 120px;
+  margin: 22px 0;
+  overflow: hidden;
+}
+.main .phone .phone-tit {
+  position: relative;
+}
+.main .phone .phone-tit > div {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.main .phone .phone-tit > div a {
+  font-size: 16px;
+  line-height: 58px;
+  color: #424242;
+  transition: color 0.4s;
+}
+.main .phone .phone-tit > div a:hover {
+  color: #ff6709;
+}
+.main .phone .phone-tit > div a:hover span {
+  color: #ff6709;
+}
+.main .phone .phone-tit > div a span {
+  margin-left: 8px;
+  color: #b0b0b0;
+  font-size: 22px;
+  vertical-align: middle;
+  transition: color 0.4s;
+}
+.main .phone .phone-main .phone-left {
+  float: left;
+  width: 234px;
+  height: 628px;
+  margin-bottom: 14px;
+}
+.main .phone .phone-main .phone-right {
+  float: right;
+  width: 978px;
+}
+.main .phone .phone-main .phone-right ul {
+  margin-left: -14px;
+}
+.main .phone .phone-main .phone-right ul > li {
+  height: 260px;
+  padding: 20px 0;
+  position: relative;
+  z-index: 1;
+  float: left;
+  width: 234px;
+  margin-left: 14px;
+  margin-bottom: 14px;
+  background: #fff;
+  /*  -webkit-transition: all .2s linear;
+                        transition: all .2s linear; */
+}
+.main .phone .phone-main .phone-right ul > li div {
+  width: 160px;
+  height: 160px;
+  margin: 0 auto 18px;
+}
+.main .phone .phone-main .phone-right ul > li div img {
+  width: 160px;
+  height: 160px;
+}
+.main .phone .phone-main .phone-right ul > li h3 {
+  margin: 0 10px 2px;
+  font-size: 14px;
+  font-weight: 400;
+  color: #333;
+}
+.main .hot .tit {
+  position: relative;
+}
+.main .hot .tit > div {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.main .hot .tit > div a {
+  font-size: 16px;
+  line-height: 58px;
+  color: #424242;
+  transition: color 0.4s;
+}
+.main .hot .tit > div a:hover {
+  color: #ff6709;
+}
+.main .hot .tit > div a:hover span {
+  color: #ff6709;
+}
+.main .hot .tit > div a span {
+  margin-left: 8px;
+  color: #b0b0b0;
+  font-size: 22px;
+  vertical-align: middle;
+  transition: color 0.4s;
+}

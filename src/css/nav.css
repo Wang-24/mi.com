@@ -1,0 +1,179 @@
+nav {
+  width: 100%;
+  height: 40px;
+  background: #333333;
+  line-height: 40px;
+  font-size: 12px;
+}
+nav a {
+  color: #b0b0b0;
+  display: inline-block;
+}
+nav a:hover {
+  color: #fff;
+}
+nav span {
+  color: #424242;
+  margin: 0 3.6px;
+}
+nav .container {
+  width: 1226px;
+  margin-right: auto;
+  margin-left: auto;
+}
+nav .container {
+  padding-right: 0px;
+  padding-left: 0px;
+}
+nav .container .left {
+  float: left;
+}
+nav .container .left .tri {
+  position: relative;
+}
+nav .container .left .tri span {
+  display: none;
+  position: absolute;
+  top: -133px;
+  left: -40px;
+}
+nav .container .left .tri span img {
+  width: 90px;
+  height: 90px;
+  margin: 18px 17px 12px;
+}
+nav .container .left .tri span::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  margin-left: -8px;
+  border: white 8px solid;
+  border-color: transparent transparent white transparent;
+  position: absolute;
+  top: -16px;
+  left: 50%;
+}
+nav .container .left .tri:hover span {
+  display: block;
+  top: 27px;
+  transition: all 1s linear;
+}
+nav .container .load {
+  float: right;
+}
+nav .container .load a:nth-child(odd) {
+  padding: 0 5px;
+}
+nav .container .load a:nth-child(5) {
+  padding: 0 10px;
+}
+nav .container .load span {
+  margin: 0;
+}
+nav .container .shopcar {
+  float: right;
+  width: 120px;
+  margin-left: 15px;
+  background: #424242;
+  position: relative;
+  height: 40px;
+}
+nav .container .shopcar div {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: none;
+  width: 316px;
+  background-color: yellowgreen;
+  transition: bottom 1s linear;
+}
+nav .container .shopcar:hover div {
+  display: block;
+  bottom: -40px;
+}
+.head a {
+  color: #333333;
+}
+.head .head-logo {
+  float: left;
+}
+.head .head-logo > a {
+  width: 55px;
+  height: 55px;
+  display: block;
+  position: relative;
+  margin-top: 22px;
+  overflow: hidden;
+  margin-right: 179px;
+}
+.head .head-logo > a:hover .logo-logo {
+  right: -55px;
+}
+.head .head-logo .logo-logo {
+  width: 110px;
+  height: 55px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transition: right linear 0.2s;
+}
+.head .head-logo .logo-logo > div {
+  width: 55px;
+  height: 55px;
+  float: left;
+}
+.head .head-logo .logo-logo .logo-left {
+  background: url(../img/mi-home.png) no-repeat #ff6700 50% 50%;
+}
+.head .head-logo .logo-logo .logo-right {
+  background: url(../img/mi-logo.png) no-repeat #ff6700 50% 50%;
+}
+.head .head-nav {
+  float: left;
+}
+.head .head-nav ul {
+  margin: 12px 0  0;
+  font-size: 16px;
+}
+.head .head-nav ul li {
+  margin: 26px 10px 38px;
+  float: left;
+  position: relative;
+}
+.head .head-nav ul li > a:hover {
+  color: #ff6700;
+}
+.head .head-nav ul li > a:hover .headchild {
+  display: block;
+}
+.head .head-nav ul li > .headchild {
+  position: absolute;
+  top: 64px;
+  height: 150px;
+  border: 1px red solid;
+  display: none;
+}
+.head .head-search {
+  float: right;
+  margin: 25px  0;
+}
+.head .head-search > input {
+  width: 223px;
+  height: 48px;
+  padding: 0 10px;
+  font-size: 14px;
+  line-height: 48px;
+  border: 1px solid #e0e0e0;
+  outline: 0;
+  float: left;
+}
+.head .head-search > button {
+  width: 52px;
+  height: 50px;
+  padding: 1px 6px;
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  outline: 0;
+  font-size: 18px;
+}
