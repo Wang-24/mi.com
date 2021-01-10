@@ -5,6 +5,11 @@ footer .foo-up .footer-tit {
   border-bottom: 1px solid #e0e0e0;
   padding: 27px 0;
 }
+footer .foo-up .footer-tit .iconfont {
+  font-size: 24px;
+  vertical-align: -4px;
+  line-height: 24px;
+}
 footer .foo-up .footer-tit ul li {
   float: left;
   border-right: 1px solid #e0e0e0;

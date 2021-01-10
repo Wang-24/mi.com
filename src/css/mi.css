@@ -13,9 +13,14 @@
 }
 body {
   font: 14px/1.5 Helvetica Neue, Helvetica, Arial, Microsoft Yahei, Hiragino Sans GB, Heiti SC, WenQuanYi Micro Hei, sans-serif;
+  box-sizing: border-box;
 }
 body img {
   vertical-align: middle;
+  border: 0;
+}
+body a {
+  color: inherit;
 }
 body li {
   list-style: none;
@@ -24,10 +29,13 @@ body a,
 body a:hover {
   text-decoration: none;
 }
-body .clear {
+body .clear::after {
+  content: " ";
   clear: both;
   height: 0;
   overflow: hidden;
+  visibility: hidden;
+  display: block;
 }
 body .spe {
   height: 18px;
@@ -39,6 +47,9 @@ body .spe {
 }
 body .price {
   color: #ff6709;
+}
+body del {
+  color: #b0b0b0;
 }
 .header {
   position: relative;
@@ -87,33 +98,42 @@ nav .container .left {
 nav .container .left .tri {
   position: relative;
 }
-nav .container .left .tri span {
-  display: none;
+nav .container .left .tri div {
+  font-size: 14px;
   position: absolute;
-  top: -133px;
+  top: 40px;
   left: -40px;
+  background: white;
+  z-index: 2;
+  box-shadow: 0 1px 5px #aaa;
+  width: 124px;
+  color: #333;
+  height: 0;
+  transition: height 0.3s;
+  overflow: hidden;
 }
-nav .container .left .tri span img {
+nav .container .left .tri div img {
   width: 90px;
   height: 90px;
-  margin: 18px 17px 12px;
+  margin: 18px 17px 0;
 }
-nav .container .left .tri span::after {
+nav .container .left .tri::after {
   content: "";
-  display: block;
+  display: none;
   width: 0;
   height: 0;
   margin-left: -8px;
   border: white 8px solid;
   border-color: transparent transparent white transparent;
   position: absolute;
-  top: -16px;
+  top: 24px;
   left: 50%;
 }
-nav .container .left .tri:hover span {
+nav .container .left .tri:hover div {
+  height: 148px;
+}
+nav .container .left .tri:hover::after {
   display: block;
-  top: 27px;
-  transition: all 1s linear;
 }
 nav .container .load {
   float: right;
@@ -137,16 +157,20 @@ nav .container .shopcar {
 }
 nav .container .shopcar div {
   position: absolute;
-  bottom: 0;
+  top: 40px;
   right: 0;
-  display: none;
+  height: 0;
   width: 316px;
-  background-color: yellowgreen;
-  transition: bottom 1s linear;
+  background-color: white;
+  transition: height 0.3s linear;
+  overflow: hidden;
+  box-shadow: 0 1px 5px #aaa;
+}
+nav .container .shopcar div p {
+  padding: 20px 0 20px;
 }
 nav .container .shopcar:hover div {
-  display: block;
-  bottom: -40px;
+  height: 100px;
 }
 .head a {
   color: #333333;
@@ -191,24 +215,61 @@ nav .container .shopcar:hover div {
 .head .head-nav ul {
   margin: 12px 0  0;
   font-size: 16px;
-}
-.head .head-nav ul li {
-  margin: 26px 10px 38px;
-  float: left;
   position: relative;
 }
-.head .head-nav ul li > a:hover {
+.head .head-nav ul > .head-navli {
+  margin: 26px 0 38px;
+  padding: 0 10px 0;
+  float: left;
+}
+.head .head-nav ul > .head-navli > a:hover {
   color: #ff6700;
 }
-.head .head-nav ul li > a:hover .headchild {
+.head .head-nav ul > .head-navli > a:hover .headchild {
   display: block;
 }
-.head .head-nav ul li > .headchild {
+.head .head-nav ul > .head-navli > .headchild {
+  z-index: 2;
   position: absolute;
-  top: 64px;
-  height: 150px;
-  border: 1px red solid;
-  display: none;
+  top: 62px;
+  left: -234px;
+  height: 0;
+  transition: height 0.3s;
+  background: #ffffff;
+  overflow: hidden;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.18);
+}
+.head .head-nav ul > .head-navli > .headchild .container {
+  padding-top: 20px;
+}
+.head .head-nav ul > .head-navli > .headchild .container ul {
+  display: flex;
+  justify-content: left;
+}
+.head .head-nav ul > .head-navli > .headchild .container ul li {
+  float: left;
+  font-size: 12px;
+  line-height: 18px;
+  width: 204.33333333px;
+}
+.head .head-nav ul > .head-navli > .headchild .container ul li a div {
+  border-right: 1px solid #b0b0b0;
+}
+.head .head-nav ul > .head-navli > .headchild .container ul li a p {
+  display: block;
+  margin-top: 18px;
+}
+.head .head-nav ul > .head-navli > .headchild .container ul li a span {
+  color: #ff6700;
+}
+.head .head-nav ul > .head-navli > .headchild .container ul li a:hover {
+  color: #333333;
+}
+.head .head-nav ul > .head-navli > .headchild .container ul li a:hover span {
+  color: #ff6700;
+}
+.head .head-nav ul > .head-navli:hover .headchild {
+  height: 210px;
 }
 .head .head-search {
   float: right;
@@ -232,21 +293,84 @@ nav .container .shopcar:hover div {
   border: 1px solid #e0e0e0;
   outline: 0;
   font-size: 18px;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+.head .head-search > button:hover {
+  color: #ffffff;
+  background: #ff6700;
 }
 .solidshow {
-  background: #944949;
   font-size: 14px;
   color: #ffffff;
 }
 .solidshow .col2 {
   float: left;
+  background: rgba(105, 101, 101, 0.6);
+  width: 234px;
+  color: #ffffff;
+  position: relative;
 }
 .solidshow .col2 ul {
   padding: 20px 0;
 }
-.solidshow .col2 li {
-  margin-left: 30px;
+.solidshow .col2 li > a {
+  position: relative;
+  display: block;
+  padding-left: 30px;
+  height: 42px;
   line-height: 42px;
+}
+.solidshow .col2 li > .nav-two {
+  position: absolute;
+  top: 0;
+  left: 234px;
+  width: 795px;
+  /*   */
+  display: none;
+  z-index: 2;
+  height: 458px;
+  border: 1px solid #e0e0e0;
+  border-left: 0;
+  background: #fff;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.18);
+}
+.solidshow .col2 li > .nav-two ul {
+  width: 248px;
+  float: left;
+  padding: 2px 0;
+  line-height: 40px;
+  color: #333;
+}
+.solidshow .col2 li > .nav-two ul li {
+  height: 76px;
+}
+.solidshow .col2 li > .nav-two ul li:hover {
+  color: #ff6709;
+  background: #ffffff;
+}
+.solidshow .col2 li > .nav-two ul li a {
+  padding: 18px 20px;
+  display: block;
+  cursor: pointer;
+}
+.solidshow .col2 li > .nav-two ul li img {
+  width: 40px;
+  height: 40px;
+  margin-right: 12px;
+}
+.solidshow .col2 li:hover {
+  background: #ff6709;
+}
+.solidshow .col2 li:hover .nav-two {
+  display: block;
+}
+.solidshow .col2 li em {
+  position: absolute;
+  top: 12px;
+  right: 20px;
+  font-size: 16px;
+  line-height: 16px;
 }
 .solidshow .col8 {
   float: right;
@@ -254,10 +378,12 @@ nav .container .shopcar:hover div {
 .solidshow .kill {
   display: flex;
   justify-content: space-between;
+  margin: 14px 0 26px;
 }
 .solidshow .kill1 {
   width: 234px;
   height: 170px;
+  background: #5f5750;
 }
 .solidshow .kill1 li {
   float: left;
@@ -267,6 +393,7 @@ nav .container .shopcar:hover div {
 .solidshow .kill1 li a {
   margin-top: 18px;
   display: block;
+  color: #ffffff;
 }
 .solidshow .kill1 li a img {
   display: block;
@@ -300,6 +427,10 @@ nav .container .shopcar:hover div {
   margin-left: 30px;
   cursor: pointer;
 }
+.main .tit-ul .tit-li:hover {
+  color: #ff6700;
+  border-bottom: 2px solid #ff6700;
+}
 .main .tit {
   position: relative;
 }
@@ -314,6 +445,11 @@ nav .container .shopcar:hover div {
 }
 .main .styl-left li {
   margin-bottom: 14px;
+  transition: all 0.2s;
+}
+.main .styl-left li:hover {
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  transform: translate3d(0, -2px, 0);
 }
 .main .styl-right {
   float: right;
@@ -332,8 +468,11 @@ nav .container .shopcar:hover div {
   margin-left: 14px;
   margin-bottom: 14px;
   background: #fff;
-  /*  -webkit-transition: all .2s linear;
-                transition: all .2s linear; */
+  transition: all 0.2s;
+}
+.main .styl-right ul > li:hover {
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  transform: translate3d(0, -2px, 0);
 }
 .main .styl-right ul > li div {
   width: 160px;
@@ -349,6 +488,78 @@ nav .container .shopcar:hover div {
   font-size: 14px;
   font-weight: 400;
   color: #333;
+}
+.main .styl-right ul > .s-two {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0;
+  margin-bottom: 0;
+  height: 300px;
+  background: transparent;
+  transition: none;
+}
+.main .styl-right ul > .s-two:hover {
+  box-shadow: none;
+  transform: none;
+}
+.main .styl-right ul > .s-two > div {
+  width: 234px;
+  height: 143px;
+  transition: all 0.2s;
+  margin: 0;
+  background: #ffffff;
+}
+.main .styl-right ul > .s-two > div:hover {
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  transform: translate3d(0, -2px, 0);
+}
+.main .styl-right ul > .s-two .s-1 .s-10 {
+  float: left;
+  width: 125px;
+  height: 70px;
+}
+.main .styl-right ul > .s-two .s-1 .s-10 p:nth-child(1) {
+  display: inline-block;
+  line-height: 20px;
+  font-size: 14px;
+  color: #333333;
+  padding: 40px 0 0 30px;
+  text-align: left;
+}
+.main .styl-right ul > .s-two .s-1 .s-11 {
+  float: right;
+  width: 80px;
+  height: 80px;
+  padding: 35px 20px 0 0;
+}
+.main .styl-right ul > .s-two .s-1 .s-11 img {
+  width: 80px;
+  height: 80px;
+}
+.main .styl-right ul > .s-two .s-2 {
+  height: 93px;
+  padding-top: 50px;
+}
+.main .styl-right ul > .s-two .s-2 .s-20 {
+  float: left;
+  margin-left: 30px;
+  width: 100px;
+  text-align: left;
+  font-size: 18px;
+}
+.main .styl-right ul > .s-two .s-2 .s-20 span {
+  font-size: 12px;
+  color: #757575;
+}
+.main .styl-right ul > .s-two .s-2 .s-21 {
+  width: 50px;
+  float: right;
+  margin-right: 30px;
+  font-size: 48px;
+  font-weight: 300;
+  margin-top: -15px;
+  color: #ff6709;
 }
 .main .xiao > h1 {
   color: #333333;
@@ -385,15 +596,46 @@ nav .container .shopcar:hover div {
   float: left;
 }
 .main .xiao .xiao1 > div:nth-child(1) {
+  font-size: 21px;
   color: #ef3a3b;
+  padding-top: 15px;
+}
+.main .xiao .xiao1 .desc {
+  color: rgba(0, 0, 0, 0.54);
+  font-size: 15px;
 }
 .main .xiao .xiao1 > img {
   margin: 25px 0;
 }
+.main .xiao .xiao1 > div:nth-child(4) {
+  width: 168px;
+  margin: 28px auto 0;
+}
+.main .xiao .xiao1 > div:nth-child(4) span {
+  width: 46px;
+  height: 46px;
+  background: #605751;
+  color: #fff;
+  font-size: 24px;
+  line-height: 46px;
+  float: left;
+}
+.main .xiao .xiao1 > div:nth-child(4) i {
+  width: 15px;
+  float: left;
+  height: 46px;
+  line-height: 46px;
+  color: #605751;
+  font-size: 28px;
+  font-style: normal;
+}
 .main .xiao .swiper {
   float: right;
+  width: 992px;
+  overflow: hidden;
 }
 .main .xiao .swiper .swiper-wrapper {
+  width: 3000px;
   height: 340px;
 }
 .main .xiao .swiper .swiper-wrapper .swiper-slide {
@@ -479,8 +721,11 @@ nav .container .shopcar:hover div {
 .main .phone .phone-main .phone-left {
   float: left;
   width: 234px;
-  height: 628px;
-  margin-bottom: 14px;
+  transition: all 0.2s;
+}
+.main .phone .phone-main .phone-left:hover {
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  transform: translate3d(0, -2px, 0);
 }
 .main .phone .phone-main .phone-right {
   float: right;
@@ -499,8 +744,11 @@ nav .container .shopcar:hover div {
   margin-left: 14px;
   margin-bottom: 14px;
   background: #fff;
-  /*  -webkit-transition: all .2s linear;
-                        transition: all .2s linear; */
+  transition: all 0.2s;
+}
+.main .phone .phone-main .phone-right ul > li:hover {
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  transform: translate3d(0, -2px, 0);
 }
 .main .phone .phone-main .phone-right ul > li div {
   width: 160px;
@@ -544,12 +792,98 @@ nav .container .shopcar:hover div {
   vertical-align: middle;
   transition: color 0.4s;
 }
+.main .video {
+  padding-bottom: 12px;
+}
+.main .video ul li {
+  float: left;
+  width: 296px;
+  height: 285px;
+  margin-right: 14px;
+  margin-bottom: 14px;
+  text-align: center;
+  background: #fff;
+  transition: all 0.2s linear;
+}
+.main .video ul li:hover {
+  z-index: 2;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  transform: translate3d(0, -2px, 0);
+}
+.main .video ul li div {
+  margin-bottom: 28px;
+}
+.main .video ul li h3 {
+  margin: 0 14px 6px;
+  font-size: 14px;
+  font-weight: 400;
+  text-align: center;
+  color: #333;
+}
+.main .video ul li p {
+  font-size: 12px;
+  color: #b0b0b0;
+}
+.floater {
+  box-sizing: border-box;
+  position: fixed;
+  bottom: 70px;
+  right: 0;
+  z-index: 99;
+}
+.floater a {
+  color: #757575 !important;
+}
+.floater .desc {
+  display: block;
+  width: 82px;
+  margin: 14px auto 0;
+  text-align: center;
+}
+.floater .app-down {
+  margin-top: 14px;
+}
+.floater .app {
+  width: 84px;
+  height: 92px;
+  background: #ffffff;
+  position: relative;
+  border-top: 1px solid #f5f5f5;
+}
+.floater .app .bag-img {
+  width: 30px;
+  height: 30px;
+  display: block;
+  margin: 0 auto  8px;
+  padding-top: 18px;
+}
+.floater .app:hover .bag {
+  display: block;
+}
+.floater .app .bag {
+  position: absolute;
+  top: 0;
+  right: 100px;
+  padding: 14px;
+  display: none;
+  margin: 6px auto;
+  background: #ffffff;
+}
+.floater .app .bag img {
+  width: 100px;
+  height: 100px;
+}
 footer a:hover {
   color: #ff6700 !important;
 }
 footer .foo-up .footer-tit {
   border-bottom: 1px solid #e0e0e0;
   padding: 27px 0;
+}
+footer .foo-up .footer-tit .iconfont {
+  font-size: 24px;
+  vertical-align: -4px;
+  line-height: 24px;
 }
 footer .foo-up .footer-tit ul li {
   float: left;

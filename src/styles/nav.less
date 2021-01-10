@@ -30,40 +30,48 @@ nav{
                 float: left;
                 .tri{
                     position: relative;
-                   
-              
-                    span{
-                        display: none;
+                    div{
+                        font-size: 14px;
                         position: absolute;
-                        top: -133px;
-                        left: -40px;
-                        
+                        top: 40px;
+                        left: -40px; 
+                        background: white;
+                        z-index: 2;
+                        box-shadow: 0 1px 5px #aaa;
+                        width: 124px;
+                        color: #333;
+                        height: 0;
+                        transition: height 0.3s;
+                        overflow: hidden;
                         img{
                             width: 90px;
                             height: 90px;
-                            margin: 18px 17px 12px;
+                            margin: 18px 17px 0;
                         }
                        
-                    } span::after{
+                    } 
+                    &::after{
                         content: "";
-                        display: block;
+                        display: none;
                         width: 0;
                         height: 0;
                         margin-left: -8px;
                         border: white 8px solid;
                         border-color: transparent transparent white transparent;
                         position: absolute;
-                        top: -16px;
+                        top: 24px;
                         left: 50%;
-
-                         }   
+                        }   
                      
                 }
                 .tri:hover{
-                    span{
-                    display: block;
-                    top: 27px;
-                    transition: all 1s linear; 
+                    div{
+                    
+                    height: 148px;
+                 
+                    }
+                    &::after{
+                        display: block;
                     }
                 }
               
@@ -90,19 +98,22 @@ nav{
                 height: 40px;
                 div{
                     position: absolute;
-                    bottom: 0;
+                    top: 40px;
                     right: 0;
-                    display: none;
+                    height: 0;
                     width: 316px;
-                    background-color: yellowgreen;
-                    transition: bottom 1s linear;
+                    background-color: white;
+                    transition: height 0.3s linear;
+                    overflow: hidden;
+                    box-shadow: 0 1px 5px #aaa;
+                    p{
+                        padding: 20px 0 20px;
+                    }
                 }
             }
             .shopcar:hover{
                 div{
-                    display: block;
-                    bottom: -40px;
-                   
+                   height: 100px; 
                 }
             }
            
@@ -155,11 +166,11 @@ nav{
         ul{ 
             margin: 12px 0  0;
             font-size: 16px;
-            li{
-                margin: 26px 10px 38px; 
-               
+            position: relative;
+            >.head-navli{
+                margin: 26px 0 38px; 
+                padding: 0 10px 0;
                 float: left;
-                position: relative;
                 >a:hover{
                     color: #ff6700;
                     .headchild{
@@ -167,13 +178,55 @@ nav{
                     }
                 }
                 >.headchild{
-                position: absolute;
-                top: 64px;
-               
-                height: 150px;
-                border: 1px red solid;
-                display: none;
-
+                    z-index: 2;
+                    position: absolute;
+                    top: 62px;
+                    left: -234px;
+                    height: 0; 
+                    transition: height 0.3s; 
+                    background: #ffffff;
+                    overflow: hidden;
+                    box-shadow: 0 8px 16px rgba(0,0,0,.18);
+                    .container{
+                        padding-top: 20px;
+                        ul{
+                            display: flex;
+                            justify-content: left;
+                            li{
+                              float: left;
+                              font-size: 12px;
+                              line-height: 18px;
+                              width: 1226/6px;
+                              a{   
+                                  div{
+                                      border-right: 1px solid #b0b0b0;
+    
+                                  }
+                                  p{
+                                      display: block;
+                                      margin-top: 18px;
+        
+                                  }
+                                span{
+                                    color: #ff6700;
+                                    
+                                }
+                               &:hover{
+                                   color: #333333;
+                                   span{
+                                       color: #ff6700;
+                                   }
+                               }
+                            }
+                        }
+                         
+                      }
+                    }
+                }
+                &:hover{
+                    .headchild{
+                        height: 210px;
+                    }
                 }
                 
             }
@@ -201,6 +254,12 @@ nav{
             border: 1px solid #e0e0e0;
             outline: 0;
             font-size: 18px;
+            transition: all 0.3s;
+            cursor: pointer;
+            &:hover{
+                color: #ffffff;
+                background: #ff6700;
+            }
         }
 
     }

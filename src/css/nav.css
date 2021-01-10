@@ -31,33 +31,42 @@ nav .container .left {
 nav .container .left .tri {
   position: relative;
 }
-nav .container .left .tri span {
-  display: none;
+nav .container .left .tri div {
+  font-size: 14px;
   position: absolute;
-  top: -133px;
+  top: 40px;
   left: -40px;
+  background: white;
+  z-index: 2;
+  box-shadow: 0 1px 5px #aaa;
+  width: 124px;
+  color: #333;
+  height: 0;
+  transition: height 0.3s;
+  overflow: hidden;
 }
-nav .container .left .tri span img {
+nav .container .left .tri div img {
   width: 90px;
   height: 90px;
-  margin: 18px 17px 12px;
+  margin: 18px 17px 0;
 }
-nav .container .left .tri span::after {
+nav .container .left .tri::after {
   content: "";
-  display: block;
+  display: none;
   width: 0;
   height: 0;
   margin-left: -8px;
   border: white 8px solid;
   border-color: transparent transparent white transparent;
   position: absolute;
-  top: -16px;
+  top: 24px;
   left: 50%;
 }
-nav .container .left .tri:hover span {
+nav .container .left .tri:hover div {
+  height: 148px;
+}
+nav .container .left .tri:hover::after {
   display: block;
-  top: 27px;
-  transition: all 1s linear;
 }
 nav .container .load {
   float: right;
@@ -81,16 +90,20 @@ nav .container .shopcar {
 }
 nav .container .shopcar div {
   position: absolute;
-  bottom: 0;
+  top: 40px;
   right: 0;
-  display: none;
+  height: 0;
   width: 316px;
-  background-color: yellowgreen;
-  transition: bottom 1s linear;
+  background-color: white;
+  transition: height 0.3s linear;
+  overflow: hidden;
+  box-shadow: 0 1px 5px #aaa;
+}
+nav .container .shopcar div p {
+  padding: 20px 0 20px;
 }
 nav .container .shopcar:hover div {
-  display: block;
-  bottom: -40px;
+  height: 100px;
 }
 .head a {
   color: #333333;
@@ -135,24 +148,61 @@ nav .container .shopcar:hover div {
 .head .head-nav ul {
   margin: 12px 0  0;
   font-size: 16px;
-}
-.head .head-nav ul li {
-  margin: 26px 10px 38px;
-  float: left;
   position: relative;
 }
-.head .head-nav ul li > a:hover {
+.head .head-nav ul > .head-navli {
+  margin: 26px 0 38px;
+  padding: 0 10px 0;
+  float: left;
+}
+.head .head-nav ul > .head-navli > a:hover {
   color: #ff6700;
 }
-.head .head-nav ul li > a:hover .headchild {
+.head .head-nav ul > .head-navli > a:hover .headchild {
   display: block;
 }
-.head .head-nav ul li > .headchild {
+.head .head-nav ul > .head-navli > .headchild {
+  z-index: 2;
   position: absolute;
-  top: 64px;
-  height: 150px;
-  border: 1px red solid;
-  display: none;
+  top: 62px;
+  left: -234px;
+  height: 0;
+  transition: height 0.3s;
+  background: #ffffff;
+  overflow: hidden;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.18);
+}
+.head .head-nav ul > .head-navli > .headchild .container {
+  padding-top: 20px;
+}
+.head .head-nav ul > .head-navli > .headchild .container ul {
+  display: flex;
+  justify-content: left;
+}
+.head .head-nav ul > .head-navli > .headchild .container ul li {
+  float: left;
+  font-size: 12px;
+  line-height: 18px;
+  width: 204.33333333px;
+}
+.head .head-nav ul > .head-navli > .headchild .container ul li a div {
+  border-right: 1px solid #b0b0b0;
+}
+.head .head-nav ul > .head-navli > .headchild .container ul li a p {
+  display: block;
+  margin-top: 18px;
+}
+.head .head-nav ul > .head-navli > .headchild .container ul li a span {
+  color: #ff6700;
+}
+.head .head-nav ul > .head-navli > .headchild .container ul li a:hover {
+  color: #333333;
+}
+.head .head-nav ul > .head-navli > .headchild .container ul li a:hover span {
+  color: #ff6700;
+}
+.head .head-nav ul > .head-navli:hover .headchild {
+  height: 210px;
 }
 .head .head-search {
   float: right;
@@ -176,4 +226,10 @@ nav .container .shopcar:hover div {
   border: 1px solid #e0e0e0;
   outline: 0;
   font-size: 18px;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+.head .head-search > button:hover {
+  color: #ffffff;
+  background: #ff6700;
 }

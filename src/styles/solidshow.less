@@ -1,17 +1,76 @@
 .solidshow{
-    background: #944949;
+    
     font-size: 14px;
     color: #ffffff;
     .col2{
         float: left; 
+        background: rgba(105,101,101,.6);
+        width: 234px;
+        color: #ffffff;
+        position: relative;
         ul{
-       padding: 20px 0;
-         }
-    li{
-        margin-left: 30px;
-        line-height: 42px;
-       
-       }
+            padding: 20px 0;
+        }
+        li{
+            >a{
+                position: relative;
+                display: block;
+                padding-left: 30px;
+                height: 42px;
+                line-height: 42px;
+            }
+            >.nav-two{
+             position: absolute;
+             top: 0;
+             left:234px;
+             width: 795px;
+             /*   */
+             display: none;
+             z-index: 2;
+             height: 458px;
+             border: 1px solid #e0e0e0;
+             border-left: 0;
+             background: #fff;
+             box-shadow: 0 8px 16px rgba(0,0,0,.18);
+             ul{
+                width: 248px;
+                float: left;
+                padding: 2px 0;
+                line-height: 40px;
+                color: #333;
+                li{
+                    height: 76px;
+                    &:hover{
+                        color: #ff6709;
+                        background: #ffffff;
+                    }
+                    a{
+                        padding: 18px 20px;
+                        display: block;
+                        cursor: pointer;
+                    }
+                    img{
+                        width: 40px;
+                        height: 40px;
+                        margin-right: 12px;
+                    }
+                }
+             }
+            }
+            &:hover{
+            background: #ff6709;
+            .nav-two{
+                display: block;
+            }
+            }
+           em{
+            position: absolute;
+            top: 12px;
+            right: 20px;
+            font-size: 16px;
+            line-height: 16px;
+           }
+        }
     }
     .col8{
         float: right;
@@ -19,11 +78,13 @@
     .kill{
         display: flex;
         justify-content: space-between;
+        margin:14px 0 26px;
        
     } 
     .kill1{
         width: 234px;
         height: 170px;
+        background: #5f5750;
         li{
         float: left;
         width: 76px;
@@ -31,6 +92,7 @@
            a{
             margin-top: 18px;
             display: block;
+            color: #ffffff;
                 img{
                 display: block;
                 width: 24px;
