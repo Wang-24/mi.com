@@ -40,9 +40,19 @@
             }
         }
     }
+    .tv,.light,.ear,.hot,.rim{
+        position: relative;
+    }
+    .show{
+        z-index: 100;
+    }
     .styl-right{
         float: right;
         width: 978px;
+        position: absolute;
+        top: 58px;
+        right: 0;
+        z-index: 1;
         ul{ 
             margin-left: -14px;
             >li{
@@ -158,6 +168,8 @@
             }
         }
     }
+
+    /* 小米闪购 */
     .xiao{
         >h1{
             color: #333333;
@@ -178,11 +190,13 @@
                     margin-left: -1px;
                     border: 1px solid #e0e0e0;
                     line-height: 16px;
-                    -webkit-transition: color .5s;
                     transition: color .5s;
                     color: #b0b0b0;
                     text-align: center;
                     cursor: pointer;
+                    &:hover{
+                        color: #ff6709;
+                    }
                 }
             }
         }
@@ -190,7 +204,6 @@
             width: 234px;
             height: 340-54px;
             background: #F1eded;
-            
             padding-top: 54px;
             float: left;
 

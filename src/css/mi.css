@@ -384,16 +384,41 @@ nav .container .shopcar:hover div {
   width: 234px;
   height: 170px;
   background: #5f5750;
+  overflow: hidden;
 }
 .solidshow .kill1 li {
   float: left;
   width: 76px;
   height: 82px;
+  position: relative;
+}
+.solidshow .kill1 li::before {
+  position: absolute;
+  content: "";
+  background: #665e57;
+  top: -1px;
+  left: 6px;
+  width: 64px;
+  height: 1px;
+}
+.solidshow .kill1 li::after {
+  position: absolute;
+  content: "";
+  background: #665e57;
+  top: 6px;
+  left: 0;
+  width: 1px;
+  height: 70px;
 }
 .solidshow .kill1 li a {
   margin-top: 18px;
   display: block;
   color: #ffffff;
+  opacity: 0.7;
+  transition: opacity 0.3s;
+}
+.solidshow .kill1 li a:hover {
+  opacity: 1;
 }
 .solidshow .kill1 li a img {
   display: block;
@@ -410,6 +435,7 @@ nav .container .shopcar:hover div {
 }
 .main {
   background: #f5f5f5;
+  /* 小米闪购 */
 }
 .main .title {
   font-size: 22px;
@@ -451,9 +477,23 @@ nav .container .shopcar:hover div {
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
   transform: translate3d(0, -2px, 0);
 }
+.main .tv,
+.main .light,
+.main .ear,
+.main .hot,
+.main .rim {
+  position: relative;
+}
+.main .show {
+  z-index: 100;
+}
 .main .styl-right {
   float: right;
   width: 978px;
+  position: absolute;
+  top: 58px;
+  right: 0;
+  z-index: 1;
 }
 .main .styl-right ul {
   margin-left: -14px;
@@ -582,11 +622,13 @@ nav .container .shopcar:hover div {
   margin-left: -1px;
   border: 1px solid #e0e0e0;
   line-height: 16px;
-  -webkit-transition: color 0.5s;
   transition: color 0.5s;
   color: #b0b0b0;
   text-align: center;
   cursor: pointer;
+}
+.main .xiao > h1 > div span:hover {
+  color: #ff6709;
 }
 .main .xiao .xiao1 {
   width: 234px;

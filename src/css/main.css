@@ -1,5 +1,6 @@
 .main {
   background: #f5f5f5;
+  /* 小米闪购 */
 }
 .main .title {
   font-size: 22px;
@@ -41,9 +42,23 @@
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
   transform: translate3d(0, -2px, 0);
 }
+.main .tv,
+.main .light,
+.main .ear,
+.main .hot,
+.main .rim {
+  position: relative;
+}
+.main .show {
+  z-index: 100;
+}
 .main .styl-right {
   float: right;
   width: 978px;
+  position: absolute;
+  top: 58px;
+  right: 0;
+  z-index: 1;
 }
 .main .styl-right ul {
   margin-left: -14px;
@@ -172,11 +187,13 @@
   margin-left: -1px;
   border: 1px solid #e0e0e0;
   line-height: 16px;
-  -webkit-transition: color 0.5s;
   transition: color 0.5s;
   color: #b0b0b0;
   text-align: center;
   cursor: pointer;
+}
+.main .xiao > h1 > div span:hover {
+  color: #ff6709;
 }
 .main .xiao .xiao1 {
   width: 234px;
