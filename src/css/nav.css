@@ -105,6 +105,13 @@ nav .container .shopcar div p {
 nav .container .shopcar:hover div {
   height: 100px;
 }
+.head {
+  z-index: 100;
+}
+.head .active {
+  z-index: 60;
+  transition: height 0.3s;
+}
 .head a {
   color: #333333;
 }
@@ -148,29 +155,28 @@ nav .container .shopcar:hover div {
 .head .head-nav ul {
   margin: 12px 0  0;
   font-size: 16px;
-  position: relative;
 }
 .head .head-nav ul > .head-navli {
-  margin: 26px 0 38px;
-  padding: 0 10px 0;
   float: left;
+  z-index: 20;
+}
+.head .head-nav ul > .head-navli > a {
+  display: block;
+  padding: 26px 10px 38px;
+  z-index: 1;
 }
 .head .head-nav ul > .head-navli > a:hover {
   color: #ff6700;
 }
-.head .head-nav ul > .head-navli > a:hover .headchild {
-  display: block;
-}
 .head .head-nav ul > .head-navli > .headchild {
-  z-index: 2;
   position: absolute;
-  top: 62px;
-  left: -234px;
+  top: 259px;
+  left: 0;
   height: 0;
-  transition: height 0.3s;
+  z-index: 30;
   background: #ffffff;
   overflow: hidden;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.18);
+  box-shadow: 0 8px 10px rgba(0, 0, 0, 0.18);
 }
 .head .head-nav ul > .head-navli > .headchild .container {
   padding-top: 20px;
@@ -202,6 +208,7 @@ nav .container .shopcar:hover div {
   color: #ff6700;
 }
 .head .head-nav ul > .head-navli:hover .headchild {
+  border-top: 1px solid #e0e0e0;
   height: 210px;
 }
 .head .head-search {

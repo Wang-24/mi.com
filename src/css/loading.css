@@ -1,0 +1,84 @@
+a {
+  text-decoration: none;
+}
+.main {
+  background-image: url("https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/72644d9b8031286de3cc74e151aefd90.jpg");
+  height: 600px;
+  background-repeat: no-repeat;
+  background-position: top center;
+}
+.main .wapper {
+  position: relative;
+  width: 1130px;
+  margin: 0 auto !important;
+}
+.main .wapper .load {
+  width: 410px;
+  position: absolute;
+  top: 30px;
+  right: 20px;
+  margin-left: 720px;
+  background: #ffffff;
+  padding: 14px;
+  text-align: center;
+}
+.main .wapper .load h3 {
+  color: #f56600;
+  font-size: 24px;
+  text-align: center;
+}
+.main .wapper .load input {
+  display: block;
+  width: 316px;
+  height: 22px;
+  padding: 13px 16px 13px 14px;
+  margin: 15px auto;
+  border-radius: 6px;
+  outline: none;
+  border: 1px solid #e8e8e8;
+}
+.main .wapper .load button {
+  width: 348px;
+  height: 50px;
+  margin: 0 auto;
+  display: block;
+  border-radius: 6px;
+  outline: none;
+  background: #f56600;
+  color: #ffffff;
+  border: 1px solid #e8e8e8;
+}
+.main .wapper .load div {
+  margin-bottom: 20px;
+}
+.main .wapper .load div a {
+  font-size: 14px;
+  color: #f56600;
+}
+.main .wapper .load p {
+  color: #757575;
+}
+.main .wapper .load p a {
+  font-size: 14px;
+  color: #757575;
+}
+.footer {
+  font-size: 14px;
+  text-align: center;
+}
+.footer div:nth-of-type(1) {
+  margin: 10px 0  !important;
+}
+.footer div:nth-of-type(1) a {
+  color: #757575;
+}
+.footer div:nth-of-type(1) a:hover {
+  color: #333333;
+}
+.footer div:nth-of-type(2) {
+  margin: 10px 0 30px;
+  color: #9d9d9d;
+}
+.footer div:nth-of-type(2) a {
+  color: #757575;
+}

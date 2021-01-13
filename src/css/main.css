@@ -18,7 +18,7 @@
   margin-left: 30px;
   cursor: pointer;
 }
-.main .tit-ul .tit-li:hover {
+.main .tit-ul .show {
   color: #ff6700;
   border-bottom: 2px solid #ff6700;
 }
@@ -58,7 +58,6 @@
   position: absolute;
   top: 58px;
   right: 0;
-  z-index: 1;
 }
 .main .styl-right ul {
   margin-left: -14px;
@@ -67,7 +66,6 @@
   height: 260px;
   padding: 20px 0;
   position: relative;
-  z-index: 1;
   float: left;
   width: 234px;
   margin-left: 14px;
@@ -338,10 +336,10 @@
   float: right;
   width: 978px;
 }
-.main .phone .phone-main .phone-right ul {
+.main .phone .phone-main .phone-right > ul {
   margin-left: -14px;
 }
-.main .phone .phone-main .phone-right ul > li {
+.main .phone .phone-main .phone-right > ul > li {
   height: 260px;
   padding: 20px 0;
   position: relative;
@@ -353,20 +351,20 @@
   background: #fff;
   transition: all 0.2s;
 }
-.main .phone .phone-main .phone-right ul > li:hover {
+.main .phone .phone-main .phone-right > ul > li:hover {
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
   transform: translate3d(0, -2px, 0);
 }
-.main .phone .phone-main .phone-right ul > li div {
+.main .phone .phone-main .phone-right > ul > li div {
   width: 160px;
   height: 160px;
   margin: 0 auto 18px;
 }
-.main .phone .phone-main .phone-right ul > li div img {
+.main .phone .phone-main .phone-right > ul > li div img {
   width: 160px;
   height: 160px;
 }
-.main .phone .phone-main .phone-right ul > li h3 {
+.main .phone .phone-main .phone-right > ul > li h3 {
   margin: 0 10px 2px;
   font-size: 14px;
   font-weight: 400;
@@ -431,6 +429,7 @@
   font-size: 12px;
   color: #b0b0b0;
 }
+/* 侧边悬浮栏 */
 .floater {
   box-sizing: border-box;
   position: fixed;
@@ -449,13 +448,14 @@
 }
 .floater .app-down {
   margin-top: 14px;
+  opacity: 0;
 }
 .floater .app {
   width: 84px;
   height: 92px;
   background: #ffffff;
   position: relative;
-  border-top: 1px solid #f5f5f5;
+  border: 1px solid #f5f5f5;
 }
 .floater .app .bag-img {
   width: 30px;

@@ -37,7 +37,7 @@ gulp.task('jsmin', function() {
     return gulp.src('./src/js/*.js')
         .pipe(jsmin())
         .pipe(rename({ suffix: '.min' }))
-        .pipe(gulp.dest('dist/js'));
+        .pipe(gulp.dest('./dist/js'));
 });
 
 // 4. 图片压缩

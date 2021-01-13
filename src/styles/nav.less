@@ -12,8 +12,6 @@ nav{
         color: #fff;
         }
     } 
-  
-    
     span{
         color:#424242;
         margin: 0 3.6px;
@@ -47,8 +45,7 @@ nav{
                             width: 90px;
                             height: 90px;
                             margin: 18px 17px 0;
-                        }
-                       
+                        }                  
                     } 
                     &::after{
                         content: "";
@@ -65,10 +62,8 @@ nav{
                      
                 }
                 .tri:hover{
-                    div{
-                    
-                    height: 148px;
-                 
+                    div{                   
+                    height: 148px;                
                     }
                     &::after{
                         display: block;
@@ -118,11 +113,18 @@ nav{
             }
            
         }   
+        
+    }
     
-}
-
-//head
+    //head
 .head{
+        z-index: 100;
+        .active{
+           
+            
+            z-index: 60;
+            transition: height 0.3s; 
+    }
     a{color: #333333;}
     .head-logo{
         float: left; 
@@ -147,18 +149,18 @@ nav{
             top: 0;
             right: 0;
             transition: right linear 0.2s;
-         >div{
-            width: 55px;
-            height: 55px;
-            float: left;
-         }
-         .logo-left{
-              background: url(../img/mi-home.png) no-repeat  #ff6700 50% 50%;
-              
-         }
-         .logo-right{
-              background: url(../img/mi-logo.png) no-repeat  #ff6700 50% 50%;
-         }
+            >div{
+                width: 55px;
+                height: 55px;
+                float: left;
+            }
+            .logo-left{
+                background: url(../img/mi-home.png) no-repeat  #ff6700 50% 50%;
+                
+            }
+            .logo-right{
+                background: url(../img/mi-logo.png) no-repeat  #ff6700 50% 50%;
+            }
         }
     }
     .head-nav{
@@ -166,27 +168,34 @@ nav{
         ul{ 
             margin: 12px 0  0;
             font-size: 16px;
-            position: relative;
+            
             >.head-navli{
-                margin: 26px 0 38px; 
-                padding: 0 10px 0;
                 float: left;
-                >a:hover{
-                    color: #ff6700;
-                    .headchild{
-                        display: block;
+                z-index: 20;
+                
+                >a{
+                    display: block;
+                    padding: 26px 10px 38px; 
+                    z-index: 1;
+                    &:hover{
+                        color: #ff6700;
                     }
+                    // .headchild{
+                    //     display: block;
+                    // }
+                        
                 }
                 >.headchild{
-                    z-index: 2;
                     position: absolute;
-                    top: 62px;
-                    left: -234px;
+                    top: 259px;
+                    left: 0;
                     height: 0; 
-                    transition: height 0.3s; 
+                    z-index: 30;
+                    
+                   
                     background: #ffffff;
                     overflow: hidden;
-                    box-shadow: 0 8px 16px rgba(0,0,0,.18);
+                    box-shadow: 0 8px 10px rgba(0,0,0,.18);
                     .container{
                         padding-top: 20px;
                         ul{
@@ -225,6 +234,8 @@ nav{
                 }
                 &:hover{
                     .headchild{
+                        
+                        border-top: 1px solid #e0e0e0;
                         height: 210px;
                     }
                 }

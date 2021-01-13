@@ -1,0 +1,100 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font: 14px/1.5 Helvetica Neue,Helvetica,Arial,Microsoft Yahei,Hiragino Sans GB,Heiti SC,WenQuanYi Micro Hei,sans-serif;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+ body{
+    background: #f9f9f9;
+    color: #666;
+    .hint{
+        color: red;
+    }
+    .wrap{
+        width: 854px;
+        margin: 0 auto;
+        .main{
+            background: white;
+            .logo{
+                width: 49px;
+                height: 48px;
+                margin: 0 auto;
+                display: block;
+                cursor: default;
+                background-image: url(https://account.xiaomi.com/static/res/349d9c1/account-static/respassport/acc-2014/img/milogo.png);
+                margin-bottom: 40px;
+            }
+            .title{
+                h4{
+                    font-size: 30px;
+                    font-weight: normal;
+                    color: #333333;
+                    text-align: center;
+                }
+            }
+            .from{
+                width: 332px;
+                padding: 30px 0;
+                line-height: 20px;
+                margin: 0 auto;
+                div{
+                    margin-bottom: 15px;
+                }
+                .text{
+                    height: 42px;
+                    line-height: 42px;
+                    border: 1px solid #e8e8e8;
+                    width: 332px;
+                    outline: none;
+                    border-radius: 5px;
+                }
+                .button{
+                    width: 330px;
+                    height: 42px;
+                    
+                    line-height: 42px;
+                    text-align: center;
+                    font-size: 14px;
+                    display: block;
+                    cursor: pointer;
+                    background-color: #ff6700;
+                    margin-top: 30px;
+                    border: 1px solid rgba(186,186,186,.3);
+                    overflow: hidden;
+                    color: white;
+                    border-radius: 8px;
+                }
+            }
+            .foot{
+                text-align: center;
+                margin-top: 70px;
+                padding-bottom: 40px;
+                a{
+                    color: #333333;
+                    font-weight: 900;
+                }
+            }
+        }
+    }
+    .footer{
+        font-size: 14px;
+        text-align: center;
+        div:nth-of-type(1){
+            margin: 10px 0  !important;
+            a{
+                color: #757575;
+                &:hover{
+                    color: #333333;
+                }
+            }
+        }
+        div:nth-of-type(2){
+            margin: 10px 0 30px;
+            color: #9d9d9d;
+        }
+    }
+ }
