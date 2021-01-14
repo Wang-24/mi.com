@@ -21,7 +21,6 @@
   z-index: 20;
 }
 body {
-  height: 2000px;
   font: 14px/1.5 Helvetica Neue, Helvetica, Arial, Microsoft Yahei, Hiragino Sans GB, Heiti SC, WenQuanYi Micro Hei, sans-serif;
 }
 body img {
@@ -236,7 +235,8 @@ body del {
 .main .container .main-r .joincar {
   margin: 30px 0;
 }
-.main .container .main-r .joincar button {
+.main .container .main-r .joincar #addItem {
+  display: inline-block;
   width: 300px;
   height: 54px;
   color: white;
@@ -245,9 +245,36 @@ body del {
   font-size: 16px;
   cursor: pointer;
 }
-.main .container .main-r .joincar button:hover {
+.main .container .main-r .joincar #addItem:hover {
   background-color: #f25807;
   border-color: #f25807;
+}
+.main .container .main-r .joincar .clear {
+  line-height: 54px;
+  float: left;
+  width: 150px;
+  height: 54px;
+  text-align: center;
+  border: 1px solid #e0e0e0;
+}
+.main .container .main-r .joincar .clear input {
+  width: 30px;
+  height: 48px;
+  border: transparent 0px ;
+  outline: none;
+}
+.main .container .main-r .joincar .clear em {
+  width: 52px;
+  height: 52px;
+}
+.main .container .main-r .joincar .clear em:hover {
+  background-color: #e0e0e0;
+}
+.main .container .main-r .joincar .clear em:nth-child(1) {
+  float: left;
+}
+.main .container .main-r .joincar .clear em:nth-child(3) {
+  float: right;
 }
 .main .container .main-r .option {
   margin: 20px 0;

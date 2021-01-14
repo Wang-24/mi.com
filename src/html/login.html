@@ -18,31 +18,35 @@
                 </div>
                 <div>
                     <div class="from">
-                        <h3>用户名/账号</h3>
-                        <input class="text username" type="text">
-                        <span class="user"></span>
-                        <div>成功注册帐号后，国家/地区将不能被修改</div>
+                        <form action="../../interface/reg.php">
 
-                        <h3>密码</h3>
-                        <input class="text password" type="password">
-                        <span class="pwd"></span>
+                            <h3>用户名/账号</h3>
+                            <input class="text username" name="username" type="text">
+                            <span class="user"></span>
+                            <div>成功注册帐号后，国家/地区将不能被修改</div>
 
-                        <h3>确认密码</h3>
-                        <input class="text again" type="password">
-                        <span class="repwd"></span>
+                            <h3>密码</h3>
+                            <input class="text password" name="password" type="password">
+                            <span class="pwd"></span>
 
-                        <h3>手机号码</h3>
-                        <input class="text phone" type="text">
-                        <span class='teltip'></span>
+                            <h3>确认密码</h3>
+                            <input class="text again" type="password">
+                            <span class="repwd"></span>
 
-                        <h3>邮箱</h3>
-                        <input class="text email" type="text">
-                        <span class="emailtip"></span>
+                            <h3>邮箱</h3>
+                            <input class="text email" name="email" type="text">
+                            <span class="emailtip"></span>
 
-                        <div>
-                            <p class="hint"></p>
-                            <input class="button" type="submit" value="立即注册">
-                        </div>
+                            <h3>手机号码</h3>
+                            <input class="text phone" name="phone" type="text">
+                            <span class='teltip'></span>
+
+                            <div>
+                                <p class="hint"></p>
+                                <input class="button" type="submit" value="立即注册">
+                            </div>
+                        </form>
+
                     </div>
                 </div>
                 <div class="foot">

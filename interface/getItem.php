@@ -14,5 +14,5 @@
     $json = json_encode($row);
 
     echo $json;
-
+    echo $sql->error; 
 ?>

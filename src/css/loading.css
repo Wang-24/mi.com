@@ -37,7 +37,7 @@ a {
   outline: none;
   border: 1px solid #e8e8e8;
 }
-.main .wapper .load button {
+.main .wapper .load .submit {
   width: 348px;
   height: 50px;
   margin: 0 auto;

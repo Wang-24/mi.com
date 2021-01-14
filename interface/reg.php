@@ -2,7 +2,9 @@
 
     // 1. 连接数据库
     include('./library/conn.php');
-
+    header('Access-Control-Allow-Origin:*');
+    header('Access-Control-Allow-Methods:POST,GET,OPTIONS');
+  
     // 2. 接收静态页面发送的表单数据
     // 3. 判断用户名是否存在(查找数据库)
     // 4. 如果用户名存在 返回结果 注册失败
@@ -14,15 +16,16 @@
     $username = $_REQUEST['username'];
     $password = $_REQUEST['password'];
     $email = $_REQUEST['email'];
-    $address = $_REQUEST['address'];
+    // $address = $_REQUEST['address'];
     $phone = $_REQUEST['phone'];
-    $sex = $_REQUEST['sex'];
+    // $sex = $_REQUEST['sex'];
 
     // echo "$username  $password  $email  $address  $phone  $sex";
 
     // 3. 通过用户名查找数据库
     $sql = "select * from users where username='$username'";
-
+    
+   
     // 执行查询操作
     $resuslt = $mysqli->query($sql);
 
@@ -31,13 +34,13 @@
     // var_dump($resuslt);
     if($resuslt->num_rows>0){
         echo '<script>alert("用户名已存在");</script>';
-        echo '<script>location.href="../eg02.reg.html"</script>';
+        echo '<script>location.href="../src/html/login.html"</script>';
         $mysqli->close(); // 关闭连接
         die();  // 终止代码往下执行
     }
 
     // 用户名不存在的情况需要将数据写入数据库
-    $insertSql = "insert into users (username,password,email,address,phone,sex) values ('$username','$password','$email','$address','$phone','$sex')";
+    $insertSql = "insert into users (username,password,phone,email) values ('$username','$password','$phone','$email')";
     
     // 执行添加操作 会返回一个布尔值
     $res = $mysqli->query($insertSql);  
@@ -45,6 +48,6 @@
 
     if($res){
         echo '<script>alert("注册成功");</script>';
-        echo '<script>location.href="../eg03.login.html"</script>';
+        echo '<script>location.href="../src/html/mi.html"</script>';
     }
 ?>

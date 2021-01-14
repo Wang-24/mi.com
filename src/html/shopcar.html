@@ -33,7 +33,7 @@
         <div class="container">
             <div class="car-tit clear">
                 <div>
-                    <input type="checkbox">全选
+                    <input class="alls" type="checkbox">全选
                 </div>
                 <p>商品名称</p>
                 <p>单价</p>
@@ -42,20 +42,21 @@
                 <p>操作</p>
             </div>
             <div class="car-main clear">
-                <div>
-                    <input type="checkbox">全选
+                <!-- <div>
+                    <input type="checkbox">
                 </div>
-                <div><img src="https://cdn.cnbj0.fds.api.mi-img.com/b2c-shopapi-pms/pms_1553764670.0369286.jpg?thumb=1&w=80&h=80" alt="">米家智能压力IH电饭煲1S 白色</div>
+                <div><img src="https://cdn.cnbj0.fds.api.mi-img.com/b2c-shopapi-pms/pms_1553764670.0369286.jpg?thumb=1&w=80&h=80" alt="">米家智能压力IH电饭煲1S 白色
+                </div>
                 <p>899元</p>
                 <div class="clear">
                     <em class="iconfont icon-jian"></em>
-                    <i>1</i>
+                    <input id="num" type="text" value="1" style="text-align:center" ;>
                     <em class="iconfont icon-jia"></em>
                 </div>
-                <p>899元</p>
+                <p class="subtotal"><em>899</em>元</p>
                 <div>
                     <p class="iconfont icon-delete"></p>
-                </div>
+                </div> -->
             </div>
             <div class="num">
                 <div>
@@ -225,6 +226,7 @@
         </div>
         </div>
     </footer>
+    <script src="../js/shopcar.js" type="module"></script>
 </body>
 
 </html>

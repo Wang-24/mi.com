@@ -20,7 +20,7 @@ $(function() {
     // console.log(1)
     //验证用户名
     $('.username').on('focus', function() {
-        $('.user').html('用户名不为空,中英文均可,最长14个字符或7个中文').css('color', 'red');
+        $('.user').html('用户名不为空').css('color', 'red');
     });
     $('.username').on('input', function() {
         checkuser();
@@ -31,7 +31,7 @@ $(function() {
         if (nameValue !== '') { //用户名不为空的情况下
             let len = nameValue.length;
             // console.log(len);
-            if (len > 7) {
+            if (len > 4) {
                 $('.user').html('√').css('color', 'green');
                 $usernameflag = true;
 
@@ -154,3 +154,15 @@ $(function() {
 })
 
 //传给数据库
+// $.ajax({
+//     type: "get",
+//     url: "../../interface/login.php",
+//     data: {
+//         username: $('.username'),
+//         password: $('.password')
+//     },
+//     dataType: "json",
+//     success: function(response) {
+//         console.log(response)
+//     }
+// });

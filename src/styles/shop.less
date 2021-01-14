@@ -22,7 +22,7 @@
     z-index: 20;
 }
 body {
-    height: 2000px;
+    
     font: 14px/1.5 Helvetica Neue,Helvetica,Arial,Microsoft Yahei,Hiragino Sans GB,Heiti SC,WenQuanYi Micro Hei,sans-serif;
    img{
       vertical-align: middle; 
@@ -244,8 +244,8 @@ body {
             }
             .joincar{
                 margin: 30px 0;
-                button{
-
+                #addItem{
+                    display: inline-block;
                     width: 300px;
                     height: 54px;
                     color: white;
@@ -256,6 +256,33 @@ body {
                     &:hover{
                         background-color: #f25807;
                         border-color: #f25807;
+                    }
+                }
+                .clear{
+                    line-height: 54px;
+                    float: left;
+                    width: 150px;
+                    height: 54px;
+                    text-align: center;
+                    border: 1px solid #e0e0e0;
+                    input{
+                        width: 30px;
+                        height: 48px;
+                        border: transparent 0px ;
+                        outline: none;
+                    }
+                    em{
+                        width: 52px;
+                        height: 52px;
+                        &:hover{
+                            background-color: #e0e0e0;
+                        }
+                    }
+                    em:nth-child(1){
+                        float: left;
+                    }
+                    em:nth-child(3){
+                        float: right;
                     }
                 }
             }

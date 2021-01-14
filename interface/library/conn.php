@@ -1,6 +1,9 @@
 <?php
     header('content-type:text/html;charset=utf-8');
 
+    header('Access-Control-Allow-Origin:*');
+    header('Access-Control-Allow-Methods:POST,GET,OPTIONS');
+   
     $mysql_config = array(
         'host'=>'localhost:3306', // host 主机名 mysql默认运行在3306端口
         'db_user'=>'root',  // 登陆数据库的用户名

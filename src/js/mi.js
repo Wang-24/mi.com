@@ -12,11 +12,11 @@ $.ajax({
         let temp = '';
 
         res.forEach((elm, i) => {
-            console.log(elm)
+            // console.log(elm)
             let picture = JSON.parse(elm.picture);
             // console.log(picture);
             let title = JSON.parse(elm.title);
-            console.log(1);
+            // console.log(1);
             temp += `<li>
                      <a href="./shop.html?id=${elm.id}">
                      <div>
@@ -31,51 +31,48 @@ $.ajax({
 
         });
         $('.phone-right>ul').append(temp);
-        console.log($('.phone-right>ul'));
+        // console.log($('.phone-right>ul'));
 
     }
 });
-
-
-//封装方法
-function addItem(id, price, num) {
-    let shop = cookie.get('shop'); // 获得cookie数据
-    let product = {
-        id,
-        price,
-        num
-    };
-    console.log(1)
-    if (shop) { // 判断购物车是否有添加过数据
-        shop = JSON.parse(shop); //将JSON字符串转回数组
-
-        // 判断购物车中是否存在该商品
-        if (shop.some(elm => elm.id == id)) {
-            // 修改数量
-            shop.forEach(el => {
-                el.id == id ? el.num = num : null;
-            });
-        } else {
-            shop.push(product);
-        }
-
-    } else {
-        shop = []; // 初始没有数据 初始化一个空数组
-        shop.push(product); // 将第一个商品添加进数组
-    }
-
-
-    cookie.set('shop', JSON.stringify(shop), 1);
-
-}
-
-
 //图片懒加载
 
 $("img.lazy").lazyload({
     effect: "fadeIn"
 });
 
+
+//返回顶部
+$(function() {
+    $(window).scroll(function() {
+
+        getScrollTop() > getClientHeight() ? $('.app-down').css('opacity', 1) : $('.app-down').css('opacity', 0);
+    })
+
+    //获取滚动条高度
+    function getScrollTop() {
+        var scrollTop = 0;
+        if (document.documentElement && document.documentElement.scrollTop) {
+            scrollTop = document.documentElement.scrollTop;
+        } else if (document.body) {
+            scrollTop = document.body.scrollTop;
+        }
+        return scrollTop;
+    }
+    console.log(getScrollTop())
+        //获取窗口高度
+    function getClientHeight() {
+        var clientHeight = 0;
+        if (document.body.clientHeight && document.documentElement.clientHeight) {
+            var clientHeight = (document.body.clientHeight < document.documentElement.clientHeight) ? document.body.clientHeight : document.documentElement.clientHeight;
+        } else {
+            var clientHeight = (document.body.clientHeight > document.documentElement.clientHeight) ? document.body.clientHeight : document.documentElement.clientHeight;
+        }
+        return clientHeight;
+    }
+
+
+})
 
 //主页下滑栏
 $(function() {
@@ -127,6 +124,8 @@ $(function() {
                 // a = null, //灰点
                 elms = {}; // 命名空间
 
+            let dian = $('.slideshow-down>a');
+
             init = function() {
                 // 获取元素
                 elms.sliderElm = this.children('div').children('.clear');
@@ -165,7 +164,7 @@ $(function() {
                     left = `+=${elms.imgWidth}`; // 改变方向
 
                     if (elms.index === 1) {
-                        elms.index = 4;
+                        elms.index = 5;
                         let divLeft = elms.sliderElm.offset().left,
                             imgLeft = elms.sliderElm.find('img').last().offset().left;
                         elms.sliderElm.css('left', `-${imgLeft-divLeft}px`);
@@ -186,12 +185,31 @@ $(function() {
                         elms.sliderElm.css('left', 0);
                     }
                 });
+                // console.log(1);
                 (function() {
-                    let dian = $('.slideshow-down>a');
-                    dian.eq(elms.index - 1).addClass('active').siblings().removeClass('active');
-
-                })()
+                    let i = elms.index - 1;
+                    dian.eq(i).addClass('active').siblings().removeClass('active');
+                })();
             }.bind(this);
+            dian.on('click', function(ev) {
+                elms.index = dian.index(ev.target);
+                console.log(elms.index)
+                dian.eq(elms.index).addClass('active').siblings().removeClass('active');
+                let left = `-=${elms.imgWidth}`;
+                // (function() {
+                //     console.log(1);
+
+
+                //     if (elms.index === 1) {
+                //         elms.index = 5;
+                //         let divLeft = elms.sliderElm.offset().left,
+                //             imgLeft = elms.sliderElm.find('img').last().offset().left;
+                //         elms.sliderElm.css('left', `-${imgLeft-divLeft}px`);
+                //     }
+
+                // })();
+
+            })
 
             stop = function() {
                 clearInterval(timer);
