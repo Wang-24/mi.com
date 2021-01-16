@@ -448,7 +448,6 @@
 }
 .floater .app-down {
   margin-top: 14px;
-  opacity: 0;
 }
 .floater .app {
   width: 84px;
@@ -464,8 +463,8 @@
   margin: 0 auto  8px;
   padding-top: 18px;
 }
-.floater .app:hover .bag {
-  display: block;
+.floater .app:hover p {
+  color: #ff6700;
 }
 .floater .app .bag {
   position: absolute;

@@ -42,10 +42,10 @@ $.ajax({
         <input id="num" class="num" type="text" value="1" style="text-align:center";>
         <em class="iconfont icon-jia"></em>
         </div>
-        <a href="">
-        <form>
+        <a href="javascript:;">
+        
             <input id="addItem"  value="加入购物车"  type="button">
-        </form>
+       
         </a>
     </div>
     <div>
@@ -273,6 +273,40 @@ function addItem(id, price, num) {
 
 }
 
+//登录状态
+$(function() {
+    let isLoad = cookie.get('isLogined');
+    let username = cookie.get('username');
+    console.log(username)
+    let temp = ``;
+    if (isLoad) {
+        temp = `<a class="isload" href="javascript:;">${username}
+        <div>
+        <p>个人中心</p>
+        <p>评价晒单</p>
+        <p>我的喜欢</p>
+        <p>小米账户</p>
+        <p class="over">注销</p>
+        </div></a>
+        <span>|</span>
+        <a href="">消息通知</a>
+        <span>|</span>
+        <a href="">我的订单</a>
+        
+        `;
+        $('.load').html(temp)
+    } else {
+        temp = `<a href="../html/loading.html">登录</a><span>|</span><a href="../html/login.html">注册</a><span>|</span><a href="">消息通知</a>`;
+        $('.load').html(temp)
+    }
+    $('.over').on('click', function() {
+        cookie.remove('isLogined', '', -1);
+        cookie.remove('username', '', -1);
+        alert('账户已退出')
+        location.reload();
+    })
+
+})
 
 $(function() {
 

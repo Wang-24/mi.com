@@ -146,6 +146,42 @@ nav .container .load a:nth-child(5) {
 nav .container .load span {
   margin: 0;
 }
+nav .container .load .isload {
+  position: relative;
+}
+nav .container .load .isload > div {
+  width: 100px;
+  transition: height 0.3s;
+  background: #fff;
+  z-index: 30;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+  position: absolute;
+  top: 40px;
+  left: -10px;
+  height: 0;
+  transition: height 0.5s;
+  opacity: 0;
+}
+nav .container .load .isload > div p:nth-child(1) {
+  margin-top: 20px;
+  display: inline-block;
+}
+nav .container .load .isload > div p:nth-last-child(1) {
+  margin-bottom: 20px;
+  display: inline-block;
+}
+nav .container .load .isload > div > p {
+  display: block;
+  line-height: 25px;
+  color: #333;
+}
+nav .container .load .isload > div > p:hover {
+  color: #ff6700;
+}
+nav .container .load .isload:hover div {
+  opacity: 1;
+  height: 170px;
+}
 nav .container .shopcar {
   float: right;
   width: 120px;
@@ -978,7 +1014,6 @@ nav .container .shopcar:hover div {
 }
 .floater .app-down {
   margin-top: 14px;
-  opacity: 0;
 }
 .floater .app {
   width: 84px;
@@ -994,8 +1029,8 @@ nav .container .shopcar:hover div {
   margin: 0 auto  8px;
   padding-top: 18px;
 }
-.floater .app:hover .bag {
-  display: block;
+.floater .app:hover p {
+  color: #ff6700;
 }
 .floater .app .bag {
   position: absolute;

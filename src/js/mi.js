@@ -2,7 +2,7 @@ import './library/jquery.js';
 import './library/jquery.lazyload.js';
 import { cookie } from './library/cookie.js';
 //首页数据渲染
-let id = location.search.split('=')[1];
+
 //发送请求
 $.ajax({
     type: "get",
@@ -32,21 +32,72 @@ $.ajax({
         });
         $('.phone-right>ul').append(temp);
         // console.log($('.phone-right>ul'));
+        $("img.lazy").lazyload({
+            effect: "fadeIn"
+        });
 
     }
 });
 //图片懒加载
+// $("img.lazy").lazyload({
+//     effect: "fadeIn"
+// });
 
-$("img.lazy").lazyload({
-    effect: "fadeIn"
-});
+//登录状态
+$(function() {
+    let isLoad = cookie.get('isLogined');
+    let username = cookie.get('username');
+    console.log(username)
+    let temp = ``;
+    if (isLoad) {
+        temp = `<a class="isload" href="javascript:;">${username}
+        <div>
+        <p>个人中心</p>
+        <p>评价晒单</p>
+        <p>我的喜欢</p>
+        <p>小米账户</p>
+        <p class="over">注销</p>
+        </div></a>
+        <span>|</span>
+        <a href="">消息通知</a>
+        <span>|</span>
+        <a href="">我的订单</a>
+        
+        `;
+        $('.load').html(temp)
+    } else {
+        temp = `<a href="../html/loading.html">登录</a><span>|</span><a href="../html/login.html">注册</a><span>|</span><a href="">消息通知</a>`;
+        $('.load').html(temp)
+    }
+    $('.over').on('click', function() {
+        cookie.remove('isLogined', '', -1);
+        cookie.remove('username', '', -1);
+        alert('账户已退出')
+        location.reload();
+    })
 
+})
+
+//倒计时
+$(function() {
+    setInterval(function() {
+        let now = new Date();
+        let futuer = new Date(2022, 0, 1, 0, 0, 0)
+        let d = new Date(futuer - now);
+        let h = d.getHours() - 8;
+        let m = d.getMinutes() < 10 ? '0' + d.getMinutes() : d.getMinutes();
+        let s = d.getSeconds() < 10 ? '0' + d.getSeconds() : d.getSeconds();
+        $('.h').html(h)
+        $('.m').html(m)
+        $('.s').html(s)
+    }, 1000)
+})
 
 //返回顶部
 $(function() {
     $(window).scroll(function() {
 
-        getScrollTop() > getClientHeight() ? $('.app-down').css('opacity', 1) : $('.app-down').css('opacity', 0);
+        getScrollTop() > getClientHeight() ? $('.app-down').css('display', 'block') : $('.app-down').css('display', 'none');
     })
 
     //获取滚动条高度
@@ -59,8 +110,7 @@ $(function() {
         }
         return scrollTop;
     }
-    console.log(getScrollTop())
-        //获取窗口高度
+    //获取窗口高度
     function getClientHeight() {
         var clientHeight = 0;
         if (document.body.clientHeight && document.documentElement.clientHeight) {
@@ -242,21 +292,33 @@ $('.slider').slider({
 
 //tab切换
 $(function() {
-    const li = $('.tit-li');
-    const div = $('.styl-right');
+        const li = $('.tit-li');
+        const div = $('.styl-right');
 
 
-    li.on('mouseover', function(ev) {
-        let ele = li.index(ev.target);
+        li.on('mouseover', function(ev) {
+            let ele = li.index(ev.target);
 
 
-        console.log(ele)
-        li.eq(ele).siblings('.tit-li').removeClass('show');
-        div.eq(ele).siblings('.styl-right').removeClass('show');
+            console.log(ele)
+            li.eq(ele).siblings('.tit-li').removeClass('show');
+            div.eq(ele).siblings('.styl-right').removeClass('show');
 
-        li.eq(ele).addClass('show').siblings('.tit-li').removeClass('show');
-        div.eq(ele).addClass('show').siblings('.styl-right').removeClass('show');
+            li.eq(ele).addClass('show').siblings('.tit-li').removeClass('show');
+            div.eq(ele).addClass('show').siblings('.styl-right').removeClass('show');
 
 
-    });
+        });
+    })
+    //侧边条hover效果
+$(function() {
+    let div = $('.app');
+
+
+    div.on('mouseenter', function() {
+        console.log($(this).children('.show'));
+        $('.show').removeClass('.show').siblings('img').addClass('.show')
+
+    })
+
 })

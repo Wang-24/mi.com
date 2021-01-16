@@ -152,17 +152,3 @@ $(function() {
         }
     });
 })
-
-//传给数据库
-// $.ajax({
-//     type: "get",
-//     url: "../../interface/login.php",
-//     data: {
-//         username: $('.username'),
-//         password: $('.password')
-//     },
-//     dataType: "json",
-//     success: function(response) {
-//         console.log(response)
-//     }
-// });

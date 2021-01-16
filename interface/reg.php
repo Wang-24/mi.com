@@ -40,7 +40,7 @@
     }
 
     // 用户名不存在的情况需要将数据写入数据库
-    $insertSql = "insert into users (username,password,phone,email) values ('$username','$password','$phone','$email')";
+    $insertSql = "insert into users (username,password,phone,email,address,sex) values ('$username','$password','$phone','$email','11','2')";
     
     // 执行添加操作 会返回一个布尔值
     $res = $mysqli->query($insertSql);  
@@ -48,6 +48,6 @@
 
     if($res){
         echo '<script>alert("注册成功");</script>';
-        echo '<script>location.href="../src/html/mi.html"</script>';
+        echo '<script>location.href="../src/html/loading.html"</script>';
     }
 ?>
